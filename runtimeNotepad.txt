@@ -1,0 +1,20 @@
+Runtime Analysis
+
+1. Ran npm install
+2. doublerInsert - 2.1741s
+   doublerAppend - 5.7298ms
+3.
+|             | Insert     | Append   |
+|-------------|------------|----------|
+| Extra small | 54.6 μs    | 158.4 μs |
+| Small       | 176.6 μs   | 169.5 μs |
+| Medium      | 281.4 μs   | 212.9 μs |
+| Large       | 14.7315 ms | 861.5 μs |
+| Extra large | 1.6989 s   | 5.881 ms |
+4. Insert is slightly faster when the array is tiny, but quickly becomes slower than the append function as the size of the array grows.
+I can tell because Append's computational times grew far less than Insert's. 
+5. (Extra Credit) The slower function is slower because it used unshift, which inserts items to the front of the array. This causes all the other
+items to be shifted one down in the index, as opposed to the append function which simply adds them to the back. In tiny arrays, unshift is faster
+because the computer has to find the back of the array to insert the item. In bigger arrays, however, it take far more time to move all the items in
+index storage than to find the back of the array.
+
